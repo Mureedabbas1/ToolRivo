@@ -1366,55 +1366,55 @@ footer{background:rgba(13,27,40,.72);backdrop-filter:blur(18px);-webkit-backdrop
 
 <div class="quick-buttons">
 
-<a href="#image-compressor">🖼️ Image Compressor</a>
+<a href="#image-compressor"><span class="quick-icon">🖼️</span><span class="quick-label">Image Compressor</span></a>
 
-<a href="#image-resizer">📐 Image Resizer</a>
+<a href="#image-resizer"><span class="quick-icon">📐</span><span class="quick-label">Image Resizer</span></a>
 
-<a href="#jpg-png">🔄 JPG to PNG</a>
+<a href="#jpg-png"><span class="quick-icon">🔄</span><span class="quick-label">JPG to PNG</span></a>
 
-<a href="#image-jpg">🎨 Image to JPG</a>
+<a href="#image-jpg"><span class="quick-icon">🎨</span><span class="quick-label">Image to JPG</span></a>
 
-<a href="#image-cropper">✂️ Image Cropper</a>
+<a href="#image-cropper"><span class="quick-icon">✂️</span><span class="quick-label">Image Cropper</span></a>
 
-<a href="#image-base64">🔢 Image to Base64</a>
+<a href="#image-base64"><span class="quick-icon">🔢</span><span class="quick-label">Image to Base64</span></a>
 
-<a href="#base64-image">🖼️ Base64 to Image</a>
+<a href="#base64-image"><span class="quick-icon">🖼️</span><span class="quick-label">Base64 to Image</span></a>
 
-<a href="#qr-generator">🔗 QR Generator</a>
+<a href="#qr-generator"><span class="quick-icon">🔗</span><span class="quick-label">QR Generator</span></a>
 
-<a href="#qr-scanner">📷 QR Scanner</a>
+<a href="#qr-scanner"><span class="quick-icon">📷</span><span class="quick-label">QR Scanner</span></a>
 
-<a href="#pdf-to-jpg">📄 PDF to JPG</a>
+<a href="#pdf-to-jpg"><span class="quick-icon">📄</span><span class="quick-label">PDF to JPG</span></a>
 
-<a href="#text-to-pdf">📝 Text to PDF</a>
+<a href="#text-to-pdf"><span class="quick-icon">📝</span><span class="quick-label">Text to PDF</span></a>
 
-<a href="#word-counter">✍️ Word Counter</a>
+<a href="#word-counter"><span class="quick-icon">✍️</span><span class="quick-label">Word Counter</span></a>
 
-<a href="#case-converter">🔤 Case Converter</a>
+<a href="#case-converter"><span class="quick-icon">🔤</span><span class="quick-label">Case Converter</span></a>
 
-<a href="#text-cleaner">🧹 Text Cleaner</a>
+<a href="#text-cleaner"><span class="quick-icon">🧹</span><span class="quick-label">Text Cleaner</span></a>
 
-<a href="#age-calculator">🎂 Age Calculator</a>
+<a href="#age-calculator"><span class="quick-icon">🎂</span><span class="quick-label">Age Calculator</span></a>
 
-<a href="#percentage">％ Percentage</a>
+<a href="#percentage"><span class="quick-icon">％</span><span class="quick-label">Percentage</span></a>
 
-<a href="#bmi">⚖️ BMI Calculator</a>
+<a href="#bmi"><span class="quick-icon">⚖️</span><span class="quick-label">BMI Calculator</span></a>
 
-<a href="#password">🔐 Password Generator</a>
+<a href="#password"><span class="quick-icon">🔐</span><span class="quick-label">Password Generator</span></a>
 
-<a href="#json">🧾 JSON Formatter</a>
+<a href="#json"><span class="quick-icon">🧾</span><span class="quick-label">JSON Formatter</span></a>
 
-<a href="#url-encoder">🔗 URL Encoder</a>
+<a href="#url-encoder"><span class="quick-icon">🔗</span><span class="quick-label">URL Encoder</span></a>
 
-<a href="#base64">🔤 Base64 Encoder</a>
+<a href="#base64"><span class="quick-icon">🔤</span><span class="quick-label">Base64 Encoder</span></a>
 
-<a href="#random-number">🎲 Random Number</a>
+<a href="#random-number"><span class="quick-icon">🎲</span><span class="quick-label">Random Number</span></a>
 
-<a href="#timestamp">⏱️ Timestamp</a>
+<a href="#timestamp"><span class="quick-icon">⏱️</span><span class="quick-label">Timestamp</span></a>
 
-<a href="#color-picker">🎨 Color Picker</a>
+<a href="#color-picker"><span class="quick-icon">🎨</span><span class="quick-label">Color Picker</span></a>
 
-<a href="#youtube-thumbnail">▶️ YouTube Thumbnail</a>
+<a href="#youtube-thumbnail"><span class="quick-icon">▶️</span><span class="quick-label">YouTube Thumbnail</span></a>
 
 </div>
 
@@ -4952,6 +4952,53 @@ footer{background:#fff!important;border-top-color:var(--tr-border)!important}
 .to-top{background:linear-gradient(135deg,#62b89b,#79b8c9)!important}
 nav > a:last-child{background:linear-gradient(135deg,#62b89b,#79b8c9)!important;box-shadow:0 5px 14px rgba(83,153,143,.13)!important}
 *{scrollbar-color:#d5e2e5 #f7fafb}
+</style>
+
+
+<style id="toolrivo-quick-labels">
+.quick-buttons{
+display:grid!important;
+grid-template-columns:repeat(5,minmax(0,1fr))!important;
+gap:12px!important;
+align-items:stretch!important;
+}
+.quick-buttons a{
+min-height:78px!important;
+width:100%!important;
+padding:12px 8px!important;
+display:flex!important;
+flex-direction:column!important;
+align-items:center!important;
+justify-content:center!important;
+gap:7px!important;
+border-radius:14px!important;
+font-size:13px!important;
+font-weight:700!important;
+line-height:1.25!important;
+text-align:center!important;
+white-space:normal!important;
+}
+.quick-buttons a::after{display:none!important}
+.quick-icon{
+display:block!important;
+font-size:24px!important;
+line-height:1!important;
+}
+.quick-label{
+display:block!important;
+color:inherit!important;
+font-size:13px!important;
+line-height:1.25!important;
+}
+@media(max-width:900px){
+.quick-buttons{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:600px){
+.quick-buttons{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+.quick-buttons a{min-height:70px!important;padding:10px 6px!important}
+.quick-icon{font-size:21px!important}
+.quick-label{font-size:12px!important}
+}
 </style>
 
 </body>
