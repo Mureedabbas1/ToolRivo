@@ -4311,12 +4311,14 @@ themeBtn.setAttribute('aria-label','Toggle theme');
 nav.insertBefore(themeBtn,$('nav > a:last-child'));
 
 function setTheme(t){
+t=(t==='light')?'light':'dark';
 if(t==='light'){root.setAttribute('data-theme','light')}
 else{root.removeAttribute('data-theme')}
 themeBtn.textContent=(t==='light')?'🌙':'☀️';
+themeBtn.title=(t==='light')?'Switch to dark mode':'Switch to light mode';
+themeBtn.setAttribute('aria-label',themeBtn.title);
 try{localStorage.setItem('tr-theme',t)}catch(e){}
-}
-var saved='dark';
+}var saved='dark';
 try{saved=localStorage.getItem('tr-theme')||'dark'}catch(e){}
 setTheme(saved);
 themeBtn.onclick=function(){
@@ -4670,5 +4672,43 @@ input:focus,textarea:focus,select:focus{border-color:#8de5c4!important;box-shado
 .result{background:rgba(7,25,37,.68)!important;border-color:rgba(141,229,196,.20)!important}
 footer{background:rgba(9,22,33,.76)!important;border-top:1px solid rgba(141,229,196,.18)!important;color:#7f9aa0!important}
 footer a,.footer-logo,.footer-links a{color:#8de5c4!important}
+
+/* THEME TOGGLE FIX */
+.theme-btn{
+position:relative!important;
+z-index:9999!important;
+display:inline-flex!important;
+align-items:center!important;
+justify-content:center!important;
+width:42px!important;height:42px!important;
+padding:0!important;
+margin-left:auto!important;margin-right:12px!important;
+border-radius:999px!important;
+cursor:pointer!important;
+font-size:19px!important;
+line-height:1!important;
+color:#e8f4f1!important;
+background:rgba(141,229,196,.10)!important;
+border:1px solid rgba(141,229,196,.28)!important;
+box-shadow:0 8px 24px rgba(0,0,0,.22)!important;
+}
+.theme-btn:hover{transform:translateY(-2px)!important;background:rgba(141,229,196,.18)!important}
+[data-theme="light"] html,[data-theme="light"] body{background:#f4f6ff!important;color:#1e2140!important}
+[data-theme="light"] body{
+background-image:radial-gradient(circle at 10% 5%,rgba(85,207,166,.16),transparent 28%),radial-gradient(circle at 90% 12%,rgba(111,183,201,.14),transparent 28%),linear-gradient(135deg,#f8fbff,#eef7f4)!important;
+}
+[data-theme="light"] nav{background:rgba(255,255,255,.86)!important;border-bottom-color:rgba(41,72,90,.16)!important}
+[data-theme="light"] .logo{color:#1e2140!important}
+[data-theme="light"] nav a{color:#48656c!important}
+[data-theme="light"] .hero h1,[data-theme="light"] .card h3,[data-theme="light"] .quick-tools h2,[data-theme="light"] .info-section h2,[data-theme="light"] .faq-section h2,[data-theme="light"] .category-title{color:#1e2140!important}
+[data-theme="light"] .hero p,[data-theme="light"] .card>p,[data-theme="light"] .quick-tools p,[data-theme="light"] .info-section p,[data-theme="light"] .faq-section p,[data-theme="light"] .tool-count{color:#667b80!important}
+[data-theme="light"] .hero,[data-theme="light"] .quick-tools,[data-theme="light"] .info-section,[data-theme="light"] .faq-section,[data-theme="light"] .card,[data-theme="light"] .category-title{
+background:rgba(255,255,255,.72)!important;
+border-color:rgba(41,72,90,.16)!important;
+box-shadow:0 18px 45px rgba(50,80,90,.10),inset 0 1px 0 rgba(255,255,255,.8)!important;
+}
+[data-theme="light"] input[type=text],[data-theme="light"] input[type=number],[data-theme="light"] input[type=date],[data-theme="light"] input[type=url],[data-theme="light"] textarea,[data-theme="light"] select,[data-theme="light"] input[type=color]{background:rgba(255,255,255,.9)!important;color:#1e2140!important;border-color:#c8dadd!important}
+[data-theme="light"] .result{background:rgba(238,248,245,.9)!important;color:#4a6268!important}
+[data-theme="light"] footer{background:rgba(255,255,255,.82)!important}
 </style></body>
 </html>
