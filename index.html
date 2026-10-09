@@ -4628,59 +4628,21 @@ delete b.dataset.busy;
 })();
 </script>
 
-<script>
-/* ===== ToolRivo 3D interactions ===== */
+<script id="toolrivo-lightweight-interactions">
+/* Keep pointer effects lightweight; no perpetual animation loop. */
 (function(){
-  const body=document.body;
-  ["o1","o2"].forEach(c=>{const o=document.createElement("div");o.className="tr3d-orb "+c;body.appendChild(o)});
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  const cards=[...document.querySelectorAll(".card")];
-  cards.forEach(card=>{
-    card.addEventListener("pointermove",e=>{
-      if(window.innerWidth<701)return;
-      const r=card.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-.5;
-      const y=(e.clientY-r.top)/r.height-.5;
-      card.style.transform="none";
-    });
-    card.addEventListener("pointerleave",()=>{card.style.transform=""});
-  });
-  let tx=0,ty=0,px=0,py=0;
-  window.addEventListener("pointermove",e=>{
-    if(window.innerWidth<701)return;
-    tx=(e.clientX/window.innerWidth-.5)*10;
-    ty=(e.clientY/window.innerHeight-.5)*8;
-  },{passive:true});
-  function frame(){
-    px+=(tx-px)*.035;py+=(ty-py)*.035;
-    document.documentElement.style.setProperty("--tr3d-x",px+"px");
-    document.documentElement.style.setProperty("--tr3d-y",py+"px");
-    requestAnimationFrame(frame);
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const hero=document.querySelector(".hero");
+  if(hero && window.matchMedia("(min-width: 801px)").matches){
+    hero.addEventListener("pointermove", function(e){
+      const r=hero.getBoundingClientRect();
+      hero.style.setProperty("--hx", ((e.clientX-r.left)/r.width-.5)*6+"px");
+      hero.style.setProperty("--hy", ((e.clientY-r.top)/r.height-.5)*4+"px");
+    }, {passive:true});
   }
-  frame();
 })();
 </script>
-<script id="toolrivo-3d-premium-js">
-(function(){
-if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-const targets=document.querySelectorAll(".card,.quick-tools .quick-btn,.quick-tools a");
-targets.forEach(el=>{
- el.addEventListener("pointermove",function(e){
-  if(innerWidth<801)return;
-  const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-  el.style.transform="none";
-  el.style.setProperty("--mx",(x*100)+"%");el.style.setProperty("--my",(y*100)+"%");
- });
- el.addEventListener("pointerleave",function(){el.style.transform=""});
-});
-const hero=document.querySelector(".hero");
-if(hero)hero.addEventListener("pointermove",e=>{
- if(innerWidth<801)return;
- const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
- hero.style.setProperty("--hx",(x*18).toFixed(2)+"px");hero.style.setProperty("--hy",(y*12).toFixed(2)+"px");
-});
-})();
-</script><style id="toolrivo-glass-final">
+<style id="toolrivo-glass-final">
 /* FINAL GLASS OVERRIDE */
 html,body{background:#0f1f2e!important;color:#e8f4f1!important}
 body{
@@ -5037,9 +4999,23 @@ box-shadow:0 8px 20px rgba(72,145,126,.18)!important;
 }
 </style>
 
+
+<style id="toolrivo-scroll-performance">
+/* Performance: reduce expensive blur and fixed-background repainting while scrolling. */
+html { scroll-behavior: auto; }
+body { background-attachment: scroll !important; }
+.card, .quick-tools, .info-section, .faq-section, .category-title {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+.tr3d-orb { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+</style>
+
 </body>
 </html>
-
 
 
 
