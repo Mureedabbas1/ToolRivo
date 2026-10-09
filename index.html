@@ -5102,6 +5102,30 @@ box-shadow:none!important;
 </style>
 
 
+
+<style id="toolrivo-pdf-banner-spacing">
+/* Give the PDF banner breathing room above, inside, and below. */
+.pdf-new-banner{
+  margin:36px auto 30px!important;
+  padding:30px 32px!important;
+  gap:24px!important;
+  box-sizing:border-box!important;
+}
+.pdf-new-banner>div{flex:1 1 420px;min-width:0}
+.pdf-new-banner h2{margin:0 0 12px!important;line-height:1.25!important}
+.pdf-new-banner p{line-height:1.7!important}
+.pdf-new-banner a{margin:4px 0!important;white-space:nowrap}
+#pdf-extra-tools{margin-top:0!important}
+#pdf-extra-tools .pdf-group-heading{margin-bottom:20px!important}
+@media(max-width:600px){
+  .pdf-new-banner{margin:26px 12px 24px!important;padding:22px 20px!important;gap:16px!important}
+  .pdf-new-banner>div{flex-basis:100%}
+  .pdf-new-banner h2{margin-bottom:10px!important}
+  .pdf-new-banner a{margin-top:4px!important;white-space:normal}
+  #pdf-extra-tools .pdf-group-heading{margin-bottom:16px!important}
+}
+</style>
+
 </body>
 </html>
 
