@@ -5180,30 +5180,46 @@ footer .note{margin-bottom:0!important}
 </style>
 
 <style id="toolrivo-theme-final">
+/* FORCE LIGHT WHITE / SILVER / ELECTRIC BLUE THEME */
 :root{color-scheme:light!important;--bg:#f7f9fc!important;--card:#ffffff!important;--input:#ffffff!important;--line:#dce3ed!important;--text:#172338!important;--muted:#64748b!important;--p1:#2563eb!important;--p2:#60a5fa!important}
 html,body{background:#f7f9fc!important;color:#172338!important;color-scheme:light!important}
-body{background:linear-gradient(135deg,#ffffff 0%,#f3f7ff 55%,#edf4ff 100%)!important;color:#172338!important}
-nav,footer,.quick-tools,.card,.info-section,.faq-section,.category-title{background:#fff!important;background-image:none!important;border-color:#dce3ed!important;color:#172338!important;box-shadow:0 6px 20px rgba(23,35,56,.06)!important}
-.hero h1,.section-title h2,.quick-tools h2,.category-title,.card h3,.info-section h2,.info-section h3,.faq-section h2,.faq-item h3{color:#172338!important}
-.hero p,.quick-tools p,.section-title p,.tool-count,.card>p,.info-section p,.faq-item p,.note{color:#64748b!important}
-.logo,.logo span,nav a,.gradient-text,.footer-logo,.footer-links a{color:#2563eb!important}
-.gradient-text{background:none!important;-webkit-text-fill-color:#2563eb!important}
-.logo-mark,button,.download,nav>a:last-child,.btn-main{background:linear-gradient(135deg,#2563eb,#60a5fa)!important;color:#fff!important;border-color:transparent!important}
-.badge,.icon,.secondary,.result,.stats span{background:#edf3ff!important;color:#2457c5!important;border-color:#d6e2f7!important}
-.quick-buttons a{background:#fff!important;background-image:none!important;color:#2457c5!important;border:1px solid #d6e2f7!important;box-shadow:none!important}
-.quick-buttons a:hover{background:#2563eb!important;color:#fff!important}
+body{background:linear-gradient(135deg,#fff 0%,#f5f8ff 52%,#eaf2ff 100%)!important;background-attachment:fixed!important;color:#172338!important}
+nav,.tr-nav{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dce3ed!important;box-shadow:0 4px 18px rgba(23,35,56,.06)!important}
+.logo,.tr-logo,nav a,.tr-nav a,.logo span{color:#172338!important}
+.logo span,.footer-logo,.footer-links a{color:#2563eb!important}
+.logo-mark{background:linear-gradient(135deg,#2563eb,#60a5fa)!important}
+.hero,.tr-hero,.tr-hero-inner,.tr-hero-copy{background:transparent!important;color:#172338!important}
+.hero::before,.hero::after{background:#dbeafe!important;opacity:.45!important}
+.hero h1,.tr-hero h1,.tr-hero-copy h1,.hero h2,.tr-hero h2{color:#172338!important}
+.gradient-text,.pdf-specialist{background:none!important;color:#2563eb!important;-webkit-text-fill-color:#2563eb!important}
+.hero p,.tr-hero p,.tr-hero-copy p,.tr-kicker{color:#64748b!important}
+.badge,.tr-kicker,.tr-mini-stats span,.stats span{background:#eff6ff!important;color:#1d4ed8!important;border:1px solid #dbeafe!important}
+.quick-tools,.pdf-showcase,.pdf-showcase-top,.pdf-showcase-copy,.pdf-showcase-groups,.pdf-showcase-footer,.pdf-new-banner,.pdf-extra-card,.pdf-tool-tile,.info-section,.faq-section,.card,.category-title,.quick-tools,.tr-platform{background:#fff!important;background-image:none!important;color:#172338!important;border-color:#dce3ed!important;box-shadow:0 8px 26px rgba(23,35,56,.07)!important}
+.pdf-showcase-badge,.pdf-tool-icon,.pdf-extra-icon,.icon,.quick-icon{background:#eff6ff!important;color:#2563eb!important;border-color:#dbeafe!important}
+.pdf-showcase h1,.pdf-showcase h2,.pdf-showcase h3,.pdf-showcase p,.pdf-showcase-copy,.pdf-showcase-groups h3,.pdf-group-heading,.pdf-count,.pdf-extra-label,.pdf-tool-tile,.pdf-tool-tile h3,.pdf-extra-card h3{color:#172338!important}
+.pdf-showcase p,.pdf-showcase-points,.pdf-showcase-footer,.pdf-extra-label{color:#64748b!important}
+.pdf-showcase-art,.pdf-orbit,.pdf-big-file,.pdf-float,.tr-scene,.tr-glow,.tr-orbit,.tr-cube,.tr-sphere,.tr-ring,.tr-platform{background-color:transparent!important}
+.tr-primary,.btn-main,button,.download,.pdf-tool-open,.tr-watch,.theme-btn,.to-top,nav>a:last-child{background:linear-gradient(135deg,#2563eb,#60a5fa)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 5px 15px rgba(37,99,235,.18)!important}
+.btn-ghost,.secondary,.tab{background:#eff6ff!important;color:#2457c5!important;border:1px solid #dbeafe!important}
+.quick-buttons a{background:#fff!important;color:#2457c5!important;border:1px solid #dbeafe!important;box-shadow:none!important}
+.quick-buttons a:hover,.tab:hover{background:#2563eb!important;color:#fff!important}
+.category-title{border-left:4px solid #2563eb!important}
+.category-title::after{background:#2563eb!important}
+.card h3,.section-title h2,.quick-tools h2,.info-section h2,.info-section h3,.faq-section h2,.faq-item h3,.f-col h4{color:#172338!important}
+.card p,.section-title p,.quick-tools p,.tool-count,.info-section p,.faq-item p,.note,.f-col a{color:#64748b!important}
 .upload{background:#f8fbff!important;color:#475569!important;border-color:#b8c9e8!important}
 input,textarea,select,input[type=color]{background:#fff!important;color:#172338!important;border-color:#cbd5e1!important}
 input::placeholder,textarea::placeholder{color:#94a3b8!important}
+input:focus,textarea:focus,select:focus{border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.12)!important}
+.result{background:#eff6ff!important;color:#334155!important;border:1px solid #dbeafe!important}
+.success{color:#15803d!important}.error{color:#dc2626!important}
 .code-output{background:#f1f5f9!important;color:#172338!important;border-color:#dce3ed!important}
 footer{background:#fff!important;border-top:1px solid #dce3ed!important;color:#64748b!important}
+.f-grid,.f-col{color:#172338!important}
 ::selection{background:#bfdbfe!important;color:#172338!important}
-/* ToolRivo light palette deployment refresh */
-html,body{background:#f7f9fc!important;color:#172338!important}
-body{background:linear-gradient(135deg,#fff 0%,#f3f7ff 55%,#edf4ff 100%)!important}
-nav,footer,.quick-tools,.card,.info-section,.faq-section,.category-title{background-color:#fff!important;color:#172338!important;border-color:#dce3ed!important}
-button,.download,.logo-mark{background:#2563eb!important;color:#fff!important}
-.gradient-text,.logo span,.footer-links a{color:#2563eb!important;-webkit-text-fill-color:#2563eb!important}
+html{scrollbar-color:#60a5fa #f1f5f9!important}
+::-webkit-scrollbar-track{background:#f1f5f9!important}
+::-webkit-scrollbar-thumb{background:#60a5fa!important}
 </style>
 </body>
 </html>
