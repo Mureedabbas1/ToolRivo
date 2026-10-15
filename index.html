@@ -306,7 +306,7 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
 <section class="wrap sec" id="tools">
   <div class="sec-head">
     <h2>All tools</h2>
-    <p class="sub" id="count" aria-live="polite">Showing 57 tools</p>
+    <p class="sub" id="count" aria-live="polite">57 tools available</p>
   </div>
 
   <div class="filters" id="categories" role="group" aria-label="Filter tools by category">
@@ -710,7 +710,7 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
     if (tokens.length || cat !== 'all') {
       count.textContent = 'Showing ' + visibleTotal + ' of ' + total + ' tools';
     } else {
-      count.textContent = 'Showing ' + total + ' tools';
+      count.textContent = total + ' tools available';
     }
   }
 
