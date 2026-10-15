@@ -306,7 +306,7 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
 <section class="wrap sec" id="tools">
   <div class="sec-head">
     <h2>All tools</h2>
-    <p class="sub" id="count" aria-live="polite">57 tools available</p>
+    <p class="sub" id="count" aria-live="polite">36 core tools available</p>
   </div>
 
   <div class="filters" id="categories" role="group" aria-label="Filter tools by category">
@@ -547,7 +547,7 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
 
   <span id="pdf-extra-tools"></span>
   <details class="more glass" id="more">
-    <summary>More PDF tools <span>21 extra utilities</span>
+    <summary>More PDF tools <span>21 extra utilities · some coming soon</span>
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
     </summary>
     <div class="xgrid">
@@ -677,7 +677,7 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
   var extras = [].slice.call(document.querySelectorAll('.xchip'));
   var more = $('more'), empty = $('empty'), count = $('count');
   var input = $('q'), filters = [].slice.call(document.querySelectorAll('.fbtn'));
-  var total = cards.length + extras.length, cat = 'all', tokens = [];
+  var total = cards.length, cat = 'all', tokens = [];
 
   function matches(el) {
     var hay = el.getAttribute('data-search') || '';
@@ -708,9 +708,9 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
     empty.hidden = !none;
     var visibleTotal = shown + (showExtras ? extraShown : 0);
     if (tokens.length || cat !== 'all') {
-      count.textContent = 'Showing ' + visibleTotal + ' of ' + total + ' tools';
+      count.textContent = 'Showing ' + visibleTotal + ' of ' + total + ' core tools';
     } else {
-      count.textContent = total + ' tools available';
+      count.textContent = total + ' core tools available';
     }
   }
 
