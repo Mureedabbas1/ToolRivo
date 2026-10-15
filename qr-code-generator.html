@@ -319,77 +319,69 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
 </footer>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <script>
-
   let qrURL = "";
 
-
   function generateQR() {
-
-    const text =
-      document.getElementById("qrText").value.trim();
-
-    const qrImage =
-      document.getElementById("qrImage");
-
-    const downloadBtn =
-      document.getElementById("downloadBtn");
-
-    const result =
-      document.getElementById("result");
-
+    const text = document.getElementById("qrText").value.trim();
+    const qrImage = document.getElementById("qrImage");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const result = document.getElementById("result");
 
     if (!text) {
-
-      alert("Please enter a URL or text first.");
-
+      result.textContent = "Please enter a URL or text first.";
       return;
-
     }
 
+    if (typeof QRCode === "undefined") {
+      result.textContent = "QR library did not load. Please refresh and try again.";
+      return;
+    }
 
-    qrURL =
-      "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
-      encodeURIComponent(text);
+    try {
+      const holder = document.createElement("div");
+      new QRCode(holder, {
+        text: text,
+        width: 300,
+        height: 300,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
 
+      const canvas = holder.querySelector("canvas");
+      const generatedImage = holder.querySelector("img");
+      qrURL = canvas ? canvas.toDataURL("image/png") : (generatedImage ? generatedImage.src : "");
 
-    qrImage.src = qrURL;
+      if (!qrURL) {
+        result.textContent = "Could not generate this QR code. Try shorter text.";
+        return;
+      }
 
-    qrImage.style.display = "block";
-
-    downloadBtn.style.display = "inline-block";
-
-    result.innerHTML =
-      "QR code generated successfully.";
-
+      qrImage.src = qrURL;
+      qrImage.style.display = "block";
+      downloadBtn.style.display = "inline-block";
+      result.textContent = "QR code generated in your browser. Your text is not sent to a QR-generation service.";
+    } catch (error) {
+      console.error(error);
+      result.textContent = "Could not generate this QR code. Try shorter text.";
+    }
   }
-
 
   function downloadQR() {
-
     if (!qrURL) {
+      document.getElementById("result").textContent = "Generate a QR code first.";
       return;
     }
 
-
-    const link =
-      document.createElement("a");
-
+    const link = document.createElement("a");
     link.href = qrURL;
-
-    link.target = "_blank";
-
-    link.download =
-      "toolrivo-qr-code.png";
-
+    link.download = "toolrivo-qr-code.png";
     document.body.appendChild(link);
-
     link.click();
-
-    document.body.removeChild(link);
-
+    link.remove();
   }
-
 </script>
 
 <script>/* ToolRivo shared 3D tool-page interaction */
