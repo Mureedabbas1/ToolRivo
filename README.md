@@ -19,7 +19,7 @@ Free online tools for image, PDF, text, and everyday tasks.
 
 Visit ToolRivo for free online tools:
 
-https://mureedabbas1.github.io/ToolRivo/
+https://toolrivo.site/
 
 ## Features
 
