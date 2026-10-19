@@ -292,7 +292,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
     <p>
       ToolRivo's free image compressor lets you reduce image file size
       directly in your browser. You can compress JPG, PNG and WebP images
-      without installing any software.
+      without installing any software. The download is saved as WebP, which supports transparency.
     </p>
 
     <h3>How to Compress an Image</h3>
@@ -460,11 +460,9 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
           parseInt(quality.value, 10) / 100;
 
 
-        compressedImage =
-          canvas.toDataURL(
-            "image/jpeg",
-            compressionQuality
-          );
+        // WebP supports lossy compression and transparency, unlike JPEG.
+        compressedImage = canvas.toDataURL("image/webp", compressionQuality);
+        const outputMime = compressedImage.slice(5, compressedImage.indexOf(";"));
 
 
         const originalSize = file.size;
@@ -472,7 +470,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
 
         const base64Length =
           compressedImage.length -
-          "data:image/jpeg;base64,".length;
+          ("data:" + outputMime + ";base64,").length;
 
 
         const compressedSize =
@@ -482,15 +480,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
 
 
         const reduction =
-          Math.max(
-            0,
-            Math.round(
-              (
-                (originalSize - compressedSize) /
-                originalSize
-              ) * 100
-            )
-          );
+          Math.round(((originalSize - compressedSize) / originalSize) * 100);
 
 
         result.innerHTML =
@@ -502,9 +492,10 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
           formatBytes(compressedSize) +
           "<br>" +
 
-          "Approximate reduction: " +
-          reduction +
-          "%";
+          (reduction >= 0 ? "Approximate reduction: " : "Approximate size increase: ") +
+          Math.abs(reduction) +
+          "%<br>Output format: " +
+          outputMime.replace("image/", "").toUpperCase();
 
 
         downloadBtn.style.display =
@@ -548,7 +539,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
 
 
     link.download =
-      "toolrivo-compressed-image.jpg";
+      "toolrivo-compressed-image.webp";
 
 
     document.body.appendChild(link);
