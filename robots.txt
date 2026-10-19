@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mureedabbas1.github.io/ToolRivo/sitemap.xml
+Sitemap: https://toolrivo.site/sitemap.xml
