@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PDF Tools Workspace | ToolRivo</title><meta name="description" content="Explore additional PDF tools at ToolRivo, including browser-based text extraction and document utilities. Some advanced tools require processing engines."><meta name="robots" content="index, follow">
-<link rel="canonical" href="https://toolrivo.site/pdf-extra-tools.html">
+<!-- Canonical URL is set for the selected tool by updateSEO() below. -->
 <style>
 :root{--blue:#126e68;--navy:#102a43;--ink:#183044;--muted:#607384;--line:#dce6ed}*{box-sizing:border-box}body{margin:0;background:#f4f8fa;color:var(--ink);font:16px/1.55 Arial,sans-serif}.top{background:linear-gradient(115deg,var(--navy),var(--blue));color:#fff;padding:26px 18px}.topin,.wrap{max-width:980px;margin:auto}.top a{color:#fff;text-decoration:none}.top h1{margin:18px 0 5px;font-size:clamp(26px,4vw,38px)}.top p{margin:0;color:#e7f6ff}.wrap{padding:24px 16px 60px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 18px;box-shadow:0 3px 14px #102a4308}.tag{display:inline-block;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}h2{margin:7px 0 10px}label{display:block;font-weight:700;margin:12px 0 5px}input,select,textarea{font:inherit;padding:11px;border:1px solid #cbd8e1;border-radius:9px;max-width:100%;width:100%;background:white}input[type=file]{padding:8px}button,.btn{border:0;border-radius:10px;background:var(--blue);color:white;font-weight:800;padding:12px 17px;cursor:pointer;text-decoration:none;display:inline-block;margin:10px 6px 0 0}button.secondary{background:#eaf2f5;color:var(--ink)}.status{margin-top:12px;white-space:pre-wrap;color:#29485b}.note{font-size:14px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.mini{border:1px solid var(--line);border-radius:12px;padding:14px}.mini strong{display:block}.mini p{margin:5px 0;color:var(--muted);font-size:14px}.hide{display:none!important}footer{text-align:center;color:var(--muted);padding:22px}
 </style><meta name="google-adsense-account" content="ca-pub-6162822251101594">
@@ -46,7 +46,29 @@ const params=new URLSearchParams(location.search);let active=params.get('tool')|
 const $=id=>document.getElementById(id);
 const select=$('tool');
 tools.forEach(t=>{const o=document.createElement('option');o.value=t[0];o.textContent=t[1];select.append(o)});
-function choose(id,changeUrl=true){const t=tools.find(x=>x[0]===id)||tools[0];active=t[0];select.value=t[0];$('title').textContent=t[1];$('heading').textContent=t[1];$('category').textContent=t[2];$('desc').textContent=t[3];$('intro').textContent=t[3];$('availability').textContent=t[4];$('status').textContent='';if(changeUrl)history.replaceState(null,'','?tool='+encodeURIComponent(t[0]));render(t);document.querySelectorAll('.mini').forEach(x=>x.classList.toggle('selected',x.dataset.id===active))}
+function updateSEO(t){
+const pageTitle=t[1]+' Online Tool | ToolRivo';
+const pageDescription=(t[3]+' '+t[4]).replace(/\\s+/g,' ').slice(0,155);
+const pageUrl='https://toolrivo.site/pdf-extra-tools.html?tool='+encodeURIComponent(t[0]);
+document.title=pageTitle;
+let description=document.querySelector('meta[name="description"]');
+if(description) description.setAttribute('content',pageDescription);
+let canonical=document.querySelector('link[rel="canonical"]');
+if(!canonical){canonical=document.createElement('link');canonical.setAttribute('rel','canonical');document.head.appendChild(canonical)}
+canonical.setAttribute('href',pageUrl);
+const tags=[
+['property','og:type','website'],
+['property','og:site_name','ToolRivo'],
+['property','og:title',pageTitle],
+['property','og:description',pageDescription],
+['property','og:url',pageUrl],
+['name','twitter:card','summary'],
+['name','twitter:title',pageTitle],
+['name','twitter:description',pageDescription]
+];
+for(const [attr,key,value] of tags){let el=document.querySelector('meta['+attr+'="'+key+'"]');if(!el){el=document.createElement('meta');el.setAttribute(attr,key);document.head.appendChild(el)}el.setAttribute('content',value)}
+}
+function choose(id,changeUrl=true){const t=tools.find(x=>x[0]===id)||tools[0];active=t[0];select.value=t[0];$('title').textContent=t[1];$('heading').textContent=t[1];$('category').textContent=t[2];$('desc').textContent=t[3];$('intro').textContent=t[3];$('availability').textContent=t[4];$('status').textContent='';if(changeUrl)history.replaceState(null,'','?tool='+encodeURIComponent(t[0]));updateSEO(t);render(t);document.querySelectorAll('.mini').forEach(x=>x.classList.toggle('selected',x.dataset.id===active))}
 select.addEventListener('change',()=>choose(select.value));
 function field(id,label,type='text'){return '<label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+type+'">'}
 function render(t){const w=$('work-area');w.innerHTML='';
@@ -58,5 +80,5 @@ w.innerHTML='<p>This tool is listed in ToolRivo, but its processing engine is no
 }
 $('all-tools').innerHTML=tools.map(t=>'<a class="mini" data-id="'+t[0]+'" href="?tool='+t[0]+'" style="color:inherit;text-decoration:none"><span class="tag">'+t[2]+'</span><strong>'+t[1]+'</strong><p>'+t[3]+'</p></a>').join('');
 $('all-tools').addEventListener('click',e=>{const a=e.target.closest('a[data-id]');if(a){e.preventDefault();choose(a.dataset.id)}});
-choose(active,false);
+choose(active,!params.has('tool'));
 </script></body></html>
