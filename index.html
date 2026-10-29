@@ -1,34 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) - ToolRivo GA4; defer network work until the page has loaded -->
+<!-- Google tag (gtag.js) - ToolRivo GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LLRSLEV9R"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-2LLRSLEV9R');
-  (function () {
-    var loadAnalytics = function () {
-      if (window.__toolrivoGaLoaded) return;
-      window.__toolrivoGaLoaded = true;
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-2LLRSLEV9R';
-      document.head.appendChild(script);
-    };
-    var scheduleAnalytics = function () {
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
-      } else {
-        window.setTimeout(loadAnalytics, 1200);
-      }
-    };
-    if (document.readyState === 'complete') {
-      scheduleAnalytics();
-    } else {
-      window.addEventListener('load', scheduleAnalytics, { once: true });
-    }
-  })();
 </script>
 
 <meta charset="UTF-8">
