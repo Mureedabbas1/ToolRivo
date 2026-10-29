@@ -48,7 +48,7 @@ const select=$('tool');
 tools.forEach(t=>{const o=document.createElement('option');o.value=t[0];o.textContent=t[1];select.append(o)});
 function updateSEO(t){
 const pageTitle=t[1]+' Online Tool | ToolRivo';
-const pageDescription=(t[3]+' '+t[4]).replace(/\\s+/g,' ').slice(0,155);
+const pageDescription=(t[3]+' '+t[4]).replace(/\s+/g,' ').slice(0,155);
 const pageUrl='https://toolrivo.site/pdf-extra-tools.html?tool='+encodeURIComponent(t[0]);
 document.title=pageTitle;
 let description=document.querySelector('meta[name="description"]');
