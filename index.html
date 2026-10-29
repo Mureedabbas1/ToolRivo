@@ -35,7 +35,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap"></noscript>
 
 <script type="application/ld+json">
 {
@@ -147,7 +148,8 @@ kbd{font:inherit;font-size:12px;font-weight:700;color:var(--muted);border:1px so
 
 /* ---------- Sections ---------- */
 section{position:relative;z-index:1}
-.sec{padding-top:64px}
+/* Defer rendering of below-the-fold sections until they approach the viewport. */
+.sec{padding-top:64px;content-visibility:auto;contain-intrinsic-size:auto 700px}
 .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 20px;margin-bottom:26px}
 h2{font-family:var(--head);font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-.01em}
 .sub{color:var(--muted);font-size:15px}
