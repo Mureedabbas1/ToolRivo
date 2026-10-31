@@ -13,6 +13,17 @@ document.querySelector('h1').textContent=title+' QR Code Generator';
 var form=document.getElementById('qrForm'),out=document.getElementById('qrOutput'),status=document.getElementById('qrStatus');
 rows.forEach(function(f){var w=document.createElement('label');w.className='field';w.appendChild(document.createTextNode(f[1]));var e;if(f[2]==='textarea'){e=document.createElement('textarea');e.rows=3;}else if(f[2]==='select'){e=document.createElement('select');(type==='wifi'?['WPA','WEP','nopass']:['PKR','USD','GBP','EUR']).forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;e.appendChild(o);});}else if(f[2]==='checkbox'){e=document.createElement('input');e.type='checkbox';}else{e=document.createElement('input');e.type=f[2];}e.name=f[0];e.placeholder=f[3]||'';w.appendChild(e);form.appendChild(w);});
 function v(k){var e=form.elements[k];return e?(e.type==='checkbox'?e.checked:String(e.value).trim()):'';}
+function validateRequired(){
+var required={ 'website-url':['url'],text:['text'],email:['email'],phone:['phone'],whatsapp:['phone'],sms:['phone'],vcard:['name'],'business-card':['name'],maps:['location'],wifi:['ssid'],facebook:['url'],instagram:['url'],tiktok:['url'],youtube:['url'],linkedin:['url'],snapchat:['url'],telegram:['url'],pdf:['url'],image:['url'],video:['url'],audio:['url'],'google-drive':['url'],payment:['recipient'],coupon:['code'] };
+var keys=required[type]||[];
+for(var i=0;i<keys.length;i++){var el=form.elements[keys[i]];if(!el||!String(el.value||'').trim()){status.textContent='Please complete the '+keys[i]+' field.';if(el)el.focus();return false;}}
+if(type==='social-links'&&!['website','instagram','facebook','tiktok','youtube','linkedin'].some(function(k){return v(k);})){status.textContent='Enter at least one social or website link.';return false;}
+if(type==='app-download'&&!v('android')&&!v('ios')){status.textContent='Enter at least one Android or iOS app link.';return false;}
+if(type==='event-ticket'&&!v('event')&&!v('ticket')){status.textContent='Enter an event name or ticket URL.';return false;}
+if(type==='bank-account'&&!v('iban')&&!v('account')){status.textContent='Enter an IBAN or account number.';return false;}
+if(type==='product'&&!v('name')&&!v('url')){status.textContent='Enter a product name or product page URL.';return false;}
+return true;
+}
 function payload(){var u=v('url');if(type==='website-url'||group.indexOf(type)>=0||file.indexOf(type)>=0||type==='menu')return u||v('url');
 if(type==='text')return v('text');if(type==='email')return 'mailto:'+v('email')+(v('subject')?'?subject='+encodeURIComponent(v('subject')):'')+(v('body')?(v('subject')?'&':'?')+'body='+encodeURIComponent(v('body')):'');if(type==='phone')return 'tel:'+v('phone');if(type==='whatsapp')return 'https://wa.me/'+v('phone').replace(/\D/g,'')+(v('message')?'?text='+encodeURIComponent(v('message')):'');if(type==='sms')return 'SMSTO:'+v('phone')+':'+v('message');
 if(type==='maps')return /^https?:\/\//i.test(v('location'))?v('location'):'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v('location'));
@@ -26,7 +37,7 @@ if(type==='product')return 'Product: '+v('name')+'\nSKU: '+v('sku')+'\nPrice: '+
 if(type==='app-download')return 'Android: '+v('android')+'\niOS: '+v('ios');
 if(type==='coupon')return 'Coupon: '+v('code')+'\nDiscount: '+v('discount')+'\nExpires: '+v('expiry')+'\nURL: '+v('url');
 return ''; }
-document.getElementById('generateQR').addEventListener('click',function(){if(!form.reportValidity())return;var data=payload();if(!data){status.textContent='Enter the required information first.';return;}out.innerHTML='';try{new QRCode(out,{text:data,width:256,height:256,colorDark:'#101828',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});status.textContent='QR code ready. Scan it to verify before sharing.';document.getElementById('downloadQR').hidden=false;}catch(e){status.textContent='Unable to create QR code. Check the details.';}});
+document.getElementById('generateQR').addEventListener('click',function(){if(!form.reportValidity()||!validateRequired())return;var data=payload();if(!data){status.textContent='Enter the required information first.';return;}out.innerHTML='';try{new QRCode(out,{text:data,width:256,height:256,colorDark:'#101828',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});status.textContent='QR code ready. Scan it to verify before sharing.';document.getElementById('downloadQR').hidden=false;}catch(e){status.textContent='Unable to create QR code. Check the details.';}});
 document.getElementById('downloadQR').addEventListener('click',function(){var c=out.querySelector('canvas'),i=out.querySelector('img'),a=document.createElement('a');a.download='toolrivo-'+type+'-qr.png';if(c)a.href=c.toDataURL('image/png');else if(i)a.href=i.src;else return;a.click();});
 document.getElementById('clearQR').addEventListener('click',function(){form.reset();out.innerHTML='';status.textContent='Enter details and generate your QR code.';document.getElementById('downloadQR').hidden=true;});
 })();
