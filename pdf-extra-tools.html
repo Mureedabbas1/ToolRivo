@@ -42,10 +42,10 @@ const tools=[
 ['edit-pdf','Edit PDF','Edit','Add new text to a selected PDF page.','Adds overlay text locally; editing or removing existing text is not included.'],
 ['sign-pdf','Sign PDF','Sign','Draw and embed your signature into a PDF page.','Browser-based signature image placement is available; certificate-based digital signing is not included.'],
 ['html-to-pdf','HTML to PDF','Convert','Print an HTML page or text as a PDF using your browser.','Works with your browser print-to-PDF feature.'],
-['unlock-pdf','Unlock PDF','Security','Remove PDF password using its existing password.','Uses qpdf WebAssembly to decrypt an authorized file; it cannot recover or bypass unknown passwords.'],
-['protect-pdf','Protect PDF','Security','Encrypt a PDF with an AES password.','Uses qpdf WebAssembly for AES-256 or AES-128 encryption locally in the browser.'],
+['unlock-pdf','Unlock PDF','Security','Remove PDF password using its existing password.','Not released yet: the qpdf WebAssembly integration needs runtime verification before this tool can be enabled.'],
+['protect-pdf','Protect PDF','Security','Encrypt a PDF with an AES password.','Not released yet: PDF encryption needs a verified browser engine and password-protection tests.'],
 ['pdf-to-pdfa','PDF to PDF/A','Archive','Convert a PDF to a standards-compliant archival PDF/A.','Requires a PDF/A conversion and validation engine.'],
-['repair-pdf','Repair PDF','Repair','Attempt to repair recoverable PDF structure errors.','Uses qpdf WebAssembly to rebuild recoverable cross-reference structures; destroyed content cannot be restored.'],
+['repair-pdf','Repair PDF','Repair','Attempt to repair recoverable PDF structure errors.','Not released yet: PDF repair needs a verified engine and damaged-file test cases.'],
 ['scan-to-pdf','Scan to PDF','Scan','Capture a document using your device camera.','Use camera access where available, then print/save the captured image as PDF.'],
 ['ocr-pdf','OCR PDF','OCR','Recognize text in scanned documents locally in your browser.','Uses Tesseract.js with downloadable language data; accuracy depends on scan quality.'],
 ['compare-pdf','Compare PDF','Compare','Compare extracted text page by page in two PDF files.','Compares selectable text page by page; visual and scanned-image differences are not included.'],
@@ -61,7 +61,7 @@ function downloadBytes(bytes,name,type){const blob=new Blob([bytes],{type}),url=
 const $=id=>document.getElementById(id);
 const select=$('tool');
 tools.forEach(t=>{const o=document.createElement('option');o.value=t[0];o.textContent=t[1];select.append(o)});
-function choose(id,changeUrl=true){const t=tools.find(x=>x[0]===id)||tools[0];active=t[0];select.value=t[0];$('title').textContent=t[1];$('heading').textContent=t[1];$('category').textContent=t[2];$('desc').textContent=t[3];$('intro').textContent=t[3];$('availability').textContent=t[4];$('status').textContent='';if(changeUrl)history.replaceState(null,'','?tool='+encodeURIComponent(t[0]));render(t);document.querySelectorAll('.mini').forEach(x=>x.classList.toggle('selected',x.dataset.id===active))}
+function choose(id,changeUrl=true){const t=tools.find(x=>x[0]===id)||tools[0];active=t[0];select.value=t[0];$('title').textContent=t[1];$('heading').textContent=t[1];$('category').textContent=t[2];$('desc').textContent=t[3];$('intro').textContent=t[3];$('availability').textContent=t[4];$('status').textContent='';if(changeUrl)history.replaceState(null,'','?tool='+encodeURIComponent(t[0]));render(t);if(['protect-pdf','unlock-pdf','repair-pdf'].includes(t[0])){$('work-area').innerHTML='<p class="note">This tool is temporarily disabled until its PDF engine passes real browser tests. It will not process or upload your file. Please use another verified PDF tool for now.</p>';}document.querySelectorAll('.mini').forEach(x=>x.classList.toggle('selected',x.dataset.id===active))}
 select.addEventListener('change',()=>choose(select.value));
 function field(id,label,type='text'){return '<label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+type+'">'}
 function render(t){const w=$('work-area');w.innerHTML='';
