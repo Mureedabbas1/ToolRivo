@@ -268,6 +268,79 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
 <meta name="twitter:image" content="https://toolrivo.site/og-image.png">
 <style id="mobile-fixes">@media (max-width:640px){html{overflow-x:clip;-webkit-text-size-adjust:100%}body{overflow-wrap:anywhere}input,select,textarea{font-size:16px;max-width:100%}input[type=file]{width:100%;box-sizing:border-box}img,video,canvas{max-width:100%}img{height:auto}footer a,nav a,header a,.footer a{padding-block:10px}button,.btn,.cta,[role=button]{min-height:40px}}</style>
 <style id="qr-section-styles">.qr-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}.qr-card{display:flex;align-items:center;gap:12px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.04));backdrop-filter:blur(16px);transition:transform .2s,border-color .2s}.qr-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.6)}.qr-icon{width:42px;height:42px;display:grid;place-items:center;flex:none;border-radius:13px;background:linear-gradient(145deg,#22d3ee,#7c5cff);font-size:25px;color:#07111f}.qr-card strong{display:block;font-family:var(--head);font-size:15px}.qr-card small{display:block;color:var(--muted);font-size:12px;line-height:1.4;margin-top:3px}.qr-card b{margin-left:auto;white-space:nowrap;color:var(--a);font-size:12px}@media(max-width:560px){.qr-card-grid{grid-template-columns:1fr}.qr-card{padding:13px}}</style>
+<style id="ilove-redesign">
+/* ===== Light, iLovePDF-style tools area. Hero + 3D animation are NOT touched. ===== */
+.light{--ink:#141a33;--muted:#5b6488;--line:#e3e7f1;position:relative;z-index:1;margin-top:64px;padding:8px 0 72px;background:#f4f6fb;color:var(--ink);border-radius:40px 40px 0 0}
+.light .sec{padding-top:56px}
+.light a{color:inherit}
+.light .glass{background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(20,26,51,.04);-webkit-backdrop-filter:none;backdrop-filter:none}
+
+.light .tools-head{display:block;text-align:center;max-width:720px;margin:0 auto 28px}
+.light .tools-head h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+.light .tools-head .sub{margin-top:10px;font-size:17px;color:var(--muted)}
+.light .tools-head #count{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--muted);background:#e8ecf7;padding:5px 14px;border-radius:999px}
+
+.light .filters{justify-content:center;margin-bottom:32px}
+.light .fbtn{color:#39425f;background:#fff;border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
+.light .fbtn:hover{background:#eceff9}
+.light .fbtn[aria-pressed="true"]{background:#141a33;color:#fff;border-color:#141a33}
+
+.light .grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.light .card{--ic:#2f6fed;padding:26px 22px 22px;gap:8px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(20,26,51,.04);-webkit-backdrop-filter:none;backdrop-filter:none;transform:none;will-change:auto;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.light .card:hover{transform:translateY(-4px);border-color:var(--ic);box-shadow:0 16px 32px rgba(20,26,51,.10)}
+.light .card::after{display:none}
+.light .card-top{justify-content:flex-start;margin-bottom:8px}
+.light .card .tag,.light .card .open{display:none}
+.light .tile{width:60px;height:60px;border-radius:16px;color:var(--ic);background:#eef2ff;background:color-mix(in srgb,var(--ic) 12%,#fff);box-shadow:none}
+.light .tile svg{width:30px;height:30px}
+.light .card h3{font-size:18px;color:var(--ink)}
+.light .card p{font-size:14px;color:var(--muted)}
+
+.light .empty h3{color:var(--ink)}
+.light .btn-white{background:#141a33;color:#fff;box-shadow:none}
+.light .more{margin-top:32px}
+.light .xchip{background:#f7f9fd;border:1px solid var(--line);color:var(--ink)}
+.light .xchip:hover{background:#eceff9}
+
+.light .qr-card{background:#fff;border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--ink)}
+.light .qr-card:hover{border-color:#7c5cff;box-shadow:0 12px 26px rgba(20,26,51,.10)}
+.light .qr-card b{color:#4f46e5}
+.light .qr-card small{color:var(--muted)}
+
+.light .features h3,.light .about h3{color:var(--ink)}
+.light .faq summary{color:var(--ink)}
+
+.light #toolrivo-tool-guides{padding-top:56px}
+.light .section-head h2{font-family:var(--head);font-size:clamp(26px,3.4vw,34px);font-weight:700;color:var(--ink)}
+.light .section-head p{margin-top:8px;color:var(--muted)}
+.light #toolrivo-tool-guides .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px}
+.light #toolrivo-tool-guides .tool{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.light .tool h3{font-family:var(--head);font-size:18px;color:var(--ink)}
+.light .tool p{margin:8px 0 12px;font-size:14.5px;color:var(--muted)}
+.light .tool a,.light .notice a{color:#4f46e5;font-weight:700}
+.light .notice{margin-top:22px;font-size:13.5px;color:var(--muted)}
+
+footer{margin-top:0;padding:8px 0 36px;background:#f4f6fb;color:#5b6488}
+footer .foot.glass{background:#fff;border:1px solid #e3e7f1;box-shadow:0 1px 2px rgba(20,26,51,.04);-webkit-backdrop-filter:none;backdrop-filter:none;color:#5b6488}
+footer .foot .brand{color:#141a33}
+footer .foot a:hover{color:#141a33}
+footer .footer-support{text-align:center;margin:18px 0 0;font-size:13.5px;color:#5b6488}
+footer .footer-support a{color:#4f46e5;font-weight:700}
+
+@media (max-width:560px){
+  .light{margin-top:40px;border-radius:28px 28px 0 0}
+  .light .sec{padding-top:44px}
+  .light .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .light .card{padding:18px 14px 16px}
+  .light .tile{width:48px;height:48px;border-radius:14px}
+  .light .tile svg{width:24px;height:24px}
+  .light .card h3{font-size:15.5px}
+  .light .card p{font-size:12.5px}
+  .light .tools-head .sub{font-size:15.5px}
+  .light .filters{gap:8px}
+  .light .fbtn{padding:8px 15px;font-size:13px}
+}
+</style>
 </head>
 <body>
 
@@ -337,9 +410,12 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
   </div>
 </section>
 
+<div class="light" id="light-zone">
+
 <section class="wrap sec" id="tools">
-  <div class="sec-head">
-    <h2>All tools</h2>
+  <div class="sec-head tools-head">
+    <h2>Every tool you need, in one place</h2>
+    <p class="sub">Free PDF, image, text and developer tools. No account and no installation.</p>
     <p class="sub" id="count" aria-live="polite">36 core tools available</p>
   </div>
 
@@ -355,207 +431,207 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
   </div>
 
   <div class="grid" id="grid">
-    <a class="card glass" id="pdf-merge" href="pdf-merge.html" data-cat="pdf" data-search="merge pdf combine multiple pdfs into one file. pdf join combine documents">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-merge" style="--ic:#f04b3f" href="pdf-merge.html" data-cat="pdf" data-search="merge pdf combine multiple pdfs into one file. pdf join combine documents">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6 4-4 4 4"/><path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22"/><path d="m20 22-5-5"/></svg></span><span class="tag">PDF</span></span>
       <h3>Merge PDF</h3>
       <p>Combine multiple PDFs into one file.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-split" href="pdf-split.html" data-cat="pdf" data-search="split pdf split pages into separate files. pdf separate divide pages">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-split" style="--ic:#f04b3f" href="pdf-split.html" data-cat="pdf" data-search="split pdf split pages into separate files. pdf separate divide pages">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></span><span class="tag">PDF</span></span>
       <h3>Split PDF</h3>
       <p>Split pages into separate files.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-compress" href="pdf-compress.html" data-cat="pdf" data-search="compress pdf reduce the file size of a pdf. pdf reduce shrink smaller size">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-compress" style="--ic:#22a06b" href="pdf-compress.html" data-cat="pdf" data-search="compress pdf reduce the file size of a pdf. pdf reduce shrink smaller size">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg></span><span class="tag">PDF</span></span>
       <h3>Compress PDF</h3>
       <p>Reduce the file size of a PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-remove-pages" href="pdf-remove-pages.html" data-cat="pdf" data-search="remove pages delete unwanted pages from a pdf. pdf delete pages">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-remove-pages" style="--ic:#f04b3f" href="pdf-remove-pages.html" data-cat="pdf" data-search="remove pages delete unwanted pages from a pdf. pdf delete pages">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg></span><span class="tag">PDF</span></span>
       <h3>Remove Pages</h3>
       <p>Delete unwanted pages from a PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-extract-pages" href="pdf-extract-pages.html" data-cat="pdf" data-search="extract pages save only the pages you select. pdf select pages save">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-extract-pages" style="--ic:#f04b3f" href="pdf-extract-pages.html" data-cat="pdf" data-search="extract pages save only the pages you select. pdf select pages save">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg></span><span class="tag">PDF</span></span>
       <h3>Extract Pages</h3>
       <p>Save only the pages you select.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-organize" href="pdf-organize.html" data-cat="pdf" data-search="organize pdf reorder the pages of a pdf. pdf reorder sort arrange pages">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-organize" style="--ic:#f04b3f" href="pdf-organize.html" data-cat="pdf" data-search="organize pdf reorder the pages of a pdf. pdf reorder sort arrange pages">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span><span class="tag">PDF</span></span>
       <h3>Organize PDF</h3>
       <p>Reorder the pages of a PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="jpg-to-pdf" href="jpg-to-pdf.html" data-cat="pdf" data-search="jpg to pdf turn images into one pdf. pdf image photo picture convert">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="jpg-to-pdf" style="--ic:#f5a524" href="jpg-to-pdf.html" data-cat="pdf" data-search="jpg to pdf turn images into one pdf. pdf image photo picture convert">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg></span><span class="tag">PDF</span></span>
       <h3>JPG to PDF</h3>
       <p>Turn images into one PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-to-jpg" href="pdf-to-jpg.html" data-cat="pdf" data-search="pdf to jpg convert pdf pages into images. pdf image picture convert">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-to-jpg" style="--ic:#2f6fed" href="pdf-to-jpg.html" data-cat="pdf" data-search="pdf to jpg convert pdf pages into images. pdf image picture convert">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="10" cy="12" r="2"/><path d="m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22"/></svg></span><span class="tag">PDF</span></span>
       <h3>PDF to JPG</h3>
       <p>Convert PDF pages into images.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-to-word" href="pdf-to-word.html" data-cat="pdf" data-search="pdf to word get an editable word file from a pdf. pdf docx doc convert editable">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-to-word" style="--ic:#2f6fed" href="pdf-to-word.html" data-cat="pdf" data-search="pdf to word get an editable word file from a pdf. pdf docx doc convert editable">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span class="tag">PDF</span></span>
       <h3>PDF to Word</h3>
       <p>Get an editable Word file from a PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-rotate" href="pdf-rotate.html" data-cat="pdf" data-search="rotate pdf turn pages to any angle. pdf turn flip angle">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-rotate" style="--ic:#8b5cf6" href="pdf-rotate.html" data-cat="pdf" data-search="rotate pdf turn pages to any angle. pdf turn flip angle">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></span><span class="tag">PDF</span></span>
       <h3>Rotate PDF</h3>
       <p>Turn pages to any angle.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-page-numbers" href="pdf-page-numbers.html" data-cat="pdf" data-search="page numbers add a number to every page. pdf pdf numbering">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-page-numbers" style="--ic:#8b5cf6" href="pdf-page-numbers.html" data-cat="pdf" data-search="page numbers add a number to every page. pdf pdf numbering">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16"/><path d="M4 15h16"/><path d="M10 3 8 21"/><path d="M16 3l-2 18"/></svg></span><span class="tag">PDF</span></span>
       <h3>Page Numbers</h3>
       <p>Add a number to every page.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="pdf-watermark" href="pdf-watermark.html" data-cat="pdf" data-search="watermark pdf add a text watermark to a pdf. pdf stamp text overlay">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="pdf-watermark" style="--ic:#8b5cf6" href="pdf-watermark.html" data-cat="pdf" data-search="watermark pdf add a text watermark to a pdf. pdf stamp text overlay">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M19.27 13.73A2.5 2.5 0 0 0 17.5 13h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.5c0-.66-.26-1.3-.73-1.77"/><path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-3-3c-1.66 0-3 1-3 3s1 2 1 3.5V13"/></svg></span><span class="tag">PDF</span></span>
       <h3>Watermark PDF</h3>
       <p>Add a text watermark to a PDF.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="text-to-pdf" href="text-to-pdf.html" data-cat="pdf" data-search="text to pdf create a simple pdf from plain text. pdf create make document">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag">PDF</span></span>
+    <a class="card glass" id="text-to-pdf" style="--ic:#f5a524" href="text-to-pdf.html" data-cat="pdf" data-search="text to pdf create a simple pdf from plain text. pdf create make document">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></span><span class="tag">PDF</span></span>
       <h3>Text to PDF</h3>
       <p>Create a simple PDF from plain text.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="image-compressor" href="image-compressor.html" data-cat="image" data-search="image compressor compress jpg, png and webp images. image reduce shrink size jpg png webp photo">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="image-compressor" style="--ic:#22a06b" href="image-compressor.html" data-cat="image" data-search="image compressor compress jpg, png and webp images. image reduce shrink size jpg png webp photo">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg></span><span class="tag">Image</span></span>
       <h3>Image Compressor</h3>
       <p>Compress JPG, PNG and WebP images.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="image-resizer" href="image-resizer.html" data-cat="image" data-search="image resizer resize images to the width and height you need. image dimensions scale photo">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="image-resizer" style="--ic:#0ea5a4" href="image-resizer.html" data-cat="image" data-search="image resizer resize images to the width and height you need. image dimensions scale photo">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/><path d="M9 21H3v-6"/></svg></span><span class="tag">Image</span></span>
       <h3>Image Resizer</h3>
       <p>Resize images to the width and height you need.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="jpg-png" href="jpg-png.html" data-cat="image" data-search="jpg to png convert jpg images into png. image jpeg convert">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="jpg-png" style="--ic:#0ea5a4" href="jpg-png.html" data-cat="image" data-search="jpg to png convert jpg images into png. image jpeg convert">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></span><span class="tag">Image</span></span>
       <h3>JPG to PNG</h3>
       <p>Convert JPG images into PNG.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="image-jpg" href="image-jpg.html" data-cat="image" data-search="image to jpg convert png, webp and more into jpg. image png webp convert jpeg">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="image-jpg" style="--ic:#0ea5a4" href="image-jpg.html" data-cat="image" data-search="image to jpg convert png, webp and more into jpg. image png webp convert jpeg">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></span><span class="tag">Image</span></span>
       <h3>Image to JPG</h3>
       <p>Convert PNG, WebP and more into JPG.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="image-cropper" href="image-cropper.html" data-cat="image" data-search="image cropper crop an image to the size you need. image cut trim photo">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="image-cropper" style="--ic:#0ea5a4" href="image-cropper.html" data-cat="image" data-search="image cropper crop an image to the size you need. image cut trim photo">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></span><span class="tag">Image</span></span>
       <h3>Image Cropper</h3>
       <p>Crop an image to the size you need.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="image-base64" href="image-base64.html" data-cat="image" data-search="image to base64 convert an image into base64 text. image encode data uri">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="image-base64" style="--ic:#0ea5a4" href="image-base64.html" data-cat="image" data-search="image to base64 convert an image into base64 text. image encode data uri">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span><span class="tag">Image</span></span>
       <h3>Image to Base64</h3>
       <p>Convert an image into Base64 text.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="base64-image" href="base64-image.html" data-cat="image" data-search="base64 to image turn base64 image data back into a picture. image decode data uri convert">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></span><span class="tag">Image</span></span>
+    <a class="card glass" id="base64-image" style="--ic:#0ea5a4" href="base64-image.html" data-cat="image" data-search="base64 to image turn base64 image data back into a picture. image decode data uri convert">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg></span><span class="tag">Image</span></span>
       <h3>Base64 to Image</h3>
       <p>Turn Base64 image data back into a picture.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
     
     
-    <a class="card glass" id="word-counter" href="word-counter.html" data-cat="text" data-search="word counter count words, characters and sentences. text characters sentences length">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg></span><span class="tag">Text</span></span>
+    <a class="card glass" id="word-counter" style="--ic:#db2777" href="word-counter.html" data-cat="text" data-search="word counter count words, characters and sentences. text characters sentences length">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12H3"/><path d="M17 18H3"/><path d="M21 6H3"/></svg></span><span class="tag">Text</span></span>
       <h3>Word Counter</h3>
       <p>Count words, characters and sentences.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="case-converter" href="case-converter.html" data-cat="text" data-search="case converter change text to upper, lower or title case. text uppercase lowercase title capitalize">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg></span><span class="tag">Text</span></span>
+    <a class="card glass" id="case-converter" style="--ic:#db2777" href="case-converter.html" data-cat="text" data-search="case converter change text to upper, lower or title case. text uppercase lowercase title capitalize">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 5-11 5 11"/><path d="M5 12h6"/><circle cx="18" cy="14" r="3"/><path d="M21 11v6"/></svg></span><span class="tag">Text</span></span>
       <h3>Case Converter</h3>
       <p>Change text to upper, lower or title case.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="text-cleaner" href="text-cleaner.html" data-cat="text" data-search="text cleaner remove extra spaces and blank lines. text spaces whitespace clean trim">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg></span><span class="tag">Text</span></span>
+    <a class="card glass" id="text-cleaner" style="--ic:#db2777" href="text-cleaner.html" data-cat="text" data-search="text cleaner remove extra spaces and blank lines. text spaces whitespace clean trim">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg></span><span class="tag">Text</span></span>
       <h3>Text Cleaner</h3>
       <p>Remove extra spaces and blank lines.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="age-calculator" href="age-calculator.html" data-cat="calc" data-search="age calculator work out your age from your date of birth. calculator birthday date years">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></span><span class="tag">Calculator</span></span>
+    <a class="card glass" id="age-calculator" style="--ic:#d97706" href="age-calculator.html" data-cat="calc" data-search="age calculator work out your age from your date of birth. calculator birthday date years">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></span><span class="tag">Calculator</span></span>
       <h3>Age Calculator</h3>
       <p>Work out your age from your date of birth.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="percentage" href="percentage.html" data-cat="calc" data-search="percentage calculator calculate percentages quickly. calculator percent discount">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></span><span class="tag">Calculator</span></span>
+    <a class="card glass" id="percentage" style="--ic:#d97706" href="percentage.html" data-cat="calc" data-search="percentage calculator calculate percentages quickly. calculator percent discount">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><span class="tag">Calculator</span></span>
       <h3>Percentage Calculator</h3>
       <p>Calculate percentages quickly.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="bmi" href="bmi.html" data-cat="calc" data-search="bmi calculator calculate bmi from height and weight. calculator body mass index health">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></span><span class="tag">Calculator</span></span>
+    <a class="card glass" id="bmi" style="--ic:#d97706" href="bmi.html" data-cat="calc" data-search="bmi calculator calculate bmi from height and weight. calculator body mass index health">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span><span class="tag">Calculator</span></span>
       <h3>BMI Calculator</h3>
       <p>Calculate BMI from height and weight.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="password" href="password.html" data-cat="dev" data-search="password generator create a strong random password. security secure random strong">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="tag">Security</span></span>
+    <a class="card glass" id="password" style="--ic:#4f46e5" href="password.html" data-cat="dev" data-search="password generator create a strong random password. security secure random strong">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></span><span class="tag">Security</span></span>
       <h3>Password Generator</h3>
       <p>Create a strong random password.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="json" href="json.html" data-cat="dev" data-search="json formatter format and validate json instantly. developer validate beautify pretty">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="json" style="--ic:#4f46e5" href="json.html" data-cat="dev" data-search="json formatter format and validate json instantly. developer validate beautify pretty">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg></span><span class="tag">Developer</span></span>
       <h3>JSON Formatter</h3>
       <p>Format and validate JSON instantly.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="url-encoder" href="url-encoder.html" data-cat="dev" data-search="url encoder / decoder encode or decode urls and text. developer percent encode decode link">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="url-encoder" style="--ic:#4f46e5" href="url-encoder.html" data-cat="dev" data-search="url encoder / decoder encode or decode urls and text. developer percent encode decode link">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><span class="tag">Developer</span></span>
       <h3>URL Encoder / Decoder</h3>
       <p>Encode or decode URLs and text.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="base64" href="base64.html" data-cat="dev" data-search="base64 encoder / decoder encode or decode text with base64. developer encode decode text">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="base64" style="--ic:#4f46e5" href="base64.html" data-cat="dev" data-search="base64 encoder / decoder encode or decode text with base64. developer encode decode text">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></span><span class="tag">Developer</span></span>
       <h3>Base64 Encoder / Decoder</h3>
       <p>Encode or decode text with Base64.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="random-number" href="random-number.html" data-cat="dev" data-search="random number generator pick a random number between two values. developer random range">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="random-number" style="--ic:#4f46e5" href="random-number.html" data-cat="dev" data-search="random number generator pick a random number between two values. developer random range">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"/></svg></span><span class="tag">Developer</span></span>
       <h3>Random Number Generator</h3>
       <p>Pick a random number between two values.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="timestamp" href="timestamp.html" data-cat="dev" data-search="unix timestamp converter get the current unix timestamp and date. developer epoch time date">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="timestamp" style="--ic:#4f46e5" href="timestamp.html" data-cat="dev" data-search="unix timestamp converter get the current unix timestamp and date. developer epoch time date">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="tag">Developer</span></span>
       <h3>Unix Timestamp Converter</h3>
       <p>Get the current Unix timestamp and date.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="color-picker" href="color-picker.html" data-cat="dev" data-search="color picker choose a color and copy its hex code. developer colour hex rgb">
-      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span><span class="tag">Developer</span></span>
+    <a class="card glass" id="color-picker" style="--ic:#4f46e5" href="color-picker.html" data-cat="dev" data-search="color picker choose a color and copy its hex code. developer colour hex rgb">
+      <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3z"/></svg></span><span class="tag">Developer</span></span>
       <h3>Color Picker</h3>
       <p>Choose a color and copy its HEX code.</p>
       <span class="open">Open tool <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <a class="card glass" id="youtube-thumbnail" href="youtube-thumbnail.html" data-cat="video" data-search="youtube thumbnail downloader get a video&#x27;s thumbnail image. youtube youtube video thumbnail download">
+    <a class="card glass" id="youtube-thumbnail" style="--ic:#e5322d" href="youtube-thumbnail.html" data-cat="video" data-search="youtube thumbnail downloader get a video&#x27;s thumbnail image. youtube youtube video thumbnail download">
       <span class="card-top"><span class="tile"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="tag">YouTube</span></span>
       <h3>YouTube Thumbnail Downloader</h3>
       <p>Get a video&#x27;s thumbnail image.</p>
@@ -700,6 +776,8 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
  </div>
 </section>
 
+
+</div><!-- /light-zone -->
 
 </main>
 
@@ -848,27 +926,6 @@ footer{position:relative;z-index:1;margin-top:80px;padding-bottom:32px}
     hero.addEventListener('pointerleave', function () { tx = 0; ty = 0; kick(); });
   }
 
-  /* ---------- Card tilt + glare ---------- */
-  if (canHover && !reduce) {
-    cards.forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        if (e.pointerType && e.pointerType !== 'mouse') return;
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width;
-        var y = (e.clientY - r.top) / r.height;
-        card.style.setProperty('--ry', ((x - 0.5) * 14).toFixed(2) + 'deg');
-        card.style.setProperty('--rx', ((0.5 - y) * 14).toFixed(2) + 'deg');
-        card.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
-        card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
-        card.classList.add('is-tilt');
-      });
-      card.addEventListener('pointerleave', function () {
-        card.style.setProperty('--rx', '0deg');
-        card.style.setProperty('--ry', '0deg');
-        card.classList.remove('is-tilt');
-      });
-    });
-  }
 })();
 </script>
 </body>
