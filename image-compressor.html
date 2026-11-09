@@ -10,7 +10,7 @@
 
   <title>Free Image Compressor Online - Compress Images | ToolRivo</title>
 
-  <meta name="description" content="Compress images online for free with ToolRivo. Reduce JPG, PNG and WebP image file size while maintaining good quality. Fast, simple and no software required.">
+  <meta name="description" content="Compress JPG, PNG and WebP images in your browser. Adjust quality, compare the estimated file size and download the converted image.">
 
   <meta name="keywords" content="image compressor, compress image online, free image compressor, reduce image size, JPG compressor, PNG compressor, WebP compressor">
 
@@ -304,7 +304,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
     <p>
       ToolRivo's free image compressor lets you reduce image file size
       directly in your browser. You can compress JPG, PNG and WebP images
-      without installing any software. The download is saved as WebP, which supports transparency.
+      without installing any software. The tool draws the selected image onto a canvas and requests WebP output. If the browser does not support WebP encoding, it may return a PNG instead; the downloaded filename now follows the actual output format. Transparency is retained where supported.
     </p>
 
     <h3>How to Compress an Image</h3>
@@ -551,8 +551,13 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;back
       compressedImage;
 
 
+    const outputMime = compressedImage.slice(5, compressedImage.indexOf(";"));
+    const extension = outputMime === "image/png" ? "png" :
+      outputMime === "image/jpeg" ? "jpg" :
+      outputMime === "image/webp" ? "webp" : "img";
+
     link.download =
-      "toolrivo-compressed-image.webp";
+      "toolrivo-compressed-image." + extension;
 
 
     document.body.appendChild(link);
