@@ -30,10 +30,10 @@
 <div id="status" class="status" role="status" aria-live="polite"></div>
 </div></section>
 <section class="panel"><span class="tag">Availability</span><h2>About this workspace</h2><p id="availability">Some tools run locally in your browser. Advanced conversion, password encryption/removal, permanent redaction, OCR, translation and AI-powered features require dedicated processing engines or service APIs before they can safely be offered as fully working tools.</p><p class="note">Your files are not uploaded by this page's basic text extraction workflow. Review output carefully before relying on converted or edited documents.</p></section>
-<section class="panel"><h2>Explore all 21 tools</h2><div id="all-tools" class="grid"></div></section>
+<section class="panel"><h2>Explore all tools</h2><div id="all-tools" class="grid"></div></section>
 </main><footer>ToolRivo · Simple tools for everyday work</footer>
 <script type="module">
-const tools=[
+const allTools=[
 ['pdf-to-powerpoint','PDF to PowerPoint','Convert','Convert PDF pages into editable presentation slides.','Requires a document-conversion engine.'],
 ['pdf-to-excel','PDF to Excel','Convert','Extract tables from PDFs into a spreadsheet.','Requires table extraction and spreadsheet export support.'],
 ['word-to-pdf','Word to PDF','Convert','Convert DOC and DOCX documents into PDF.','Requires a DOCX renderer or conversion service.'],
@@ -56,6 +56,9 @@ const tools=[
 ['translate-pdf','Translate PDF','AI','Translate document text into another language.','Translation API and layout reconstruction engine required.'],
 ['pdf-to-markdown','PDF to Markdown','Export','Extract PDF text into Markdown.','Runs in browser using PDF.js; complex layouts may need cleanup.']
 ];
+/* Tools that are not working yet are hidden until they are released. */
+const HIDDEN_TOOLS=['pdf-to-powerpoint','pdf-to-excel','word-to-pdf','powerpoint-to-pdf','excel-to-pdf','unlock-pdf','protect-pdf','pdf-to-pdfa','repair-pdf','redact-pdf','translate-pdf'];
+const tools=allTools.filter(t=>!HIDDEN_TOOLS.includes(t[0]));
 const params=new URLSearchParams(location.search);let active=params.get('tool')||'pdf-to-markdown';
 function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>{if(c==='&')return '&amp;';if(c==='<')return '&lt;';if(c==='>')return '&gt;';if(c==='"')return '&quot;';return '&#39;'})}
 function downloadBytes(bytes,name,type){const blob=new Blob([bytes],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
