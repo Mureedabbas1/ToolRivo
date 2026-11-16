@@ -960,7 +960,7 @@ footer .footer-support a{color:#fff;font-weight:700}
     var t = e.target, tag = t && t.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || (t && t.isContentEditable)) return;
     e.preventDefault();
-    setTimeout(function () { input.focus(); }, 0);
+    setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (_) { input.focus(); } }, 0);
   });
 
   /* ---------- Open extra PDF tools when linked by #pdf-extra-tools ---------- */
