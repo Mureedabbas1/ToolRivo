@@ -67,3 +67,40 @@ body.tr-plain .tr-related a{display:inline-flex;align-items:center;min-height:44
   body.tr-plain .wrap{padding:18px 14px}
   input[type=file]::file-selector-button{display:block;margin:0 0 8px}
 }
+
+
+/* ---------- App-like mobile shell (2026-11-19) ---------- */
+@media(max-width:700px){
+  html{scroll-padding-top:76px}
+  body{font-size:15px;overflow-x:hidden}
+  .wrap{max-width:100%;width:100%;padding-left:14px;padding-right:14px}
+  .site-header{top:0;padding-top:6px}
+  .nav{border-radius:17px;padding:10px 12px;gap:9px}
+  .brand{font-size:19px}
+  .logo{width:34px;height:34px;flex:0 0 34px}
+  .hero{padding-top:28px;padding-bottom:22px;grid-template-columns:minmax(0,1fr);gap:18px}
+  .hero h1{font-size:clamp(34px,9vw,48px);line-height:1.08}
+  .hero p{font-size:15px;line-height:1.65}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-actions .btn,.hero-actions a{width:100%;min-height:48px}
+  .tool-grid,.tools-grid,.xgrid,.qr-card-grid,.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tool-card,.qr-card,.glass{min-width:0;border-radius:16px}
+  .tool-card h3,.qr-card h3{font-size:14px;line-height:1.35}
+  .section{padding:38px 0}
+  .section-head{margin-bottom:20px}
+  .search,.search-box,.tool-search{width:100%;min-width:0}
+  input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),select,textarea{font-size:16px}
+  button,.btn,.cta,[role=button],input[type=submit]{min-height:44px}
+  .footer,.site-footer{padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+  .footer-links,.footer-nav{gap:8px 12px}
+  .footer a,.footer-links a,.footer-nav a{min-height:44px}
+  body.tr-plain .wrap{padding:18px 14px}
+}
+@media(max-width:380px){
+  .tool-grid,.tools-grid,.xgrid,.qr-card-grid,.category-grid{grid-template-columns:minmax(0,1fr)}
+  .nav{gap:6px;padding:8px}
+}
+@media(display-mode:standalone){
+  body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+  .site-header{top:env(safe-area-inset-top)}
+}
