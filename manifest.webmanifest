@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "ToolRivo — Free Online Tools",
+  "short_name": "ToolRivo",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070b1a",
+  "theme_color": "#070b1a",
+  "description": "ToolRivo — Free Online Tools web app",
+  "icons": [
+    {
+      "src": "/assets/toolrivo-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
